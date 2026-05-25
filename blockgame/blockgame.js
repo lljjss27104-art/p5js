@@ -148,7 +148,6 @@ function lifeColorSystem() {
   if (ballcolor === 0 && life === 0) {
     xDir = 0;
     yDir = 0;
-    console.log('game over');
   }
 }
 
@@ -180,7 +179,6 @@ function checkLevelUp() {
   if (score === 3600 && currentLevel === 2) {
     xDir = 0;
     yDir = 0;
-    console.log('game clear');
   }
 }
 
@@ -209,5 +207,14 @@ function informationDrawing() {
   text("LEVEL : " + currentLevel, 20, 20);
   text("SCORE : " + score, 20, 45);
   text("LIFE : " + life, 20, 70);
+
+  if (life === 0) {
+    text("GAME OVER", 20, 95);
+  }
+  
+  if (score === 3600 && currentLevel === 2) {
+    text("GAME CLEAR!", 20, 95);
+  }
+  
   pop();
 }
